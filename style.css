@@ -1,0 +1,365 @@
+.placeholder-box {
+    height: 220px;
+}
+
+/* Efeito de levantar ao passar o mouse nos cards */
+.categoria-card,
+.produto-card {
+    transition: transform 0.2s ease;
+}
+
+.categoria-card:hover,
+.produto-card:hover {
+    transform: translateY(-5px);
+}
+
+#lista-carrinho {
+    max-height: 500px;
+}
+
+.carrinho-offcanvas {
+    width: min(420px, 100%);
+}
+
+.carrinho-lista {
+    display: grid;
+    gap: 14px;
+    padding-right: 4px;
+}
+
+.carrinho-item {
+    align-items: center;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+}
+
+.carrinho-img {
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    flex: 0 0 82px;
+    height: 82px;
+    justify-content: center;
+    overflow: hidden;
+    width: 82px;
+}
+
+.carrinho-img img {
+    height: auto;
+    max-height: 68px;
+    max-width: 72px;
+    object-fit: contain;
+    width: auto;
+}
+
+.carrinho-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.carrinho-info h6 {
+    font-size: 0.95rem;
+}
+
+.quantidade-box {
+    align-items: center;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    display: inline-flex;
+    gap: 8px;
+    padding: 2px;
+}
+
+.quantidade-box .btn {
+    align-items: center;
+    border: 0;
+    display: inline-flex;
+    height: 26px;
+    justify-content: center;
+    padding: 0;
+    width: 26px;
+}
+
+.quantidade-box span {
+    font-weight: 700;
+    min-width: 16px;
+    text-align: center;
+}
+
+.carrinho-resumo {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+/* cadastro de produto */
+.produto-form-card,
+.produto-preview-card {
+    border-radius: 8px;
+}
+
+.produto-form-card .form-control:focus,
+.produto-form-card .form-select:focus {
+    border-color: #ff8a2a;
+    box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.16);
+}
+
+.produto-check {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 12px 12px 38px;
+}
+
+.produto-preview-img {
+    align-items: center;
+    background: #f8f9fa;
+    display: flex;
+    height: 280px;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.produto-preview-img img {
+    height: auto;
+    max-height: 235px;
+    max-width: 88%;
+    object-fit: contain;
+    width: auto;
+}
+
+.produto-preview-card {
+    position: sticky;
+    top: 24px;
+}
+
+@media (max-width: 991px) {
+    .produto-preview-card {
+        position: static;
+    }
+}
+
+/* Fundo escuro atrás das setas do carrossel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.navbar-brand img{
+    transition:.25s;
+}
+
+.navbar-brand:hover img{
+    transform:scale(1.08);
+}
+
+.navbar-brand span{
+    color:white;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* footer */
+
+footer{
+    background:#111;
+}
+
+.footer-link{
+    color:#bdbdbd;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-link:hover{
+    color:#ff6a00;
+    padding-left:5px;
+}
+
+footer h5{
+    color:#fff;
+}
+
+footer p{
+    color:#cfcfcf;
+}
+
+footer .badge{
+    font-size:14px;
+    border-radius:8px;
+}
+
+
+/* botao de comrprar */
+
+.btn-warning{
+    background:#ff6a00;
+    border:none;
+    color:white;
+    transition:.25s;
+}
+
+.btn-warning:hover{
+    background:#ff8500;
+    transform:translateY(-2px);
+}
+
+.btn-outline-dark:hover{
+    background:#111;
+}
+
+/* Categorias */
+
+.categoria-icon{
+    font-size: 80px;
+    color: #ff6a00;
+    transition: .3s;
+}
+
+.categoria-card:hover .categoria-icon{
+    transform: scale(1.15) rotate(-5deg);
+    color: #ff8500;
+}
+
+.placeholder-box{
+    height: 220px;
+    background: #f8f9fa;
+}
+
+.preco-box {
+    display: flex;
+    flex-direction: column;  
+    gap: 2px;             
+}
+
+
+/* banners */
+
+.banner-promo {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.banner-promo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.banner-promo img[src="#"] {
+    min-height: 160px;
+    background: #e9ecef;
+}
+
+/* corrige as imagens dos produtos */
+.produto-card .placeholder-box {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.produto-card .placeholder-box img {
+    max-width: 100%;
+    max-height: 180px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================================================
+   Página individual do produto (produto-*.html)
+   ========================================================= */
+
+/* Foto grande da galeria */
+.produto-galeria-principal {
+    height: 420px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.produto-galeria-principal img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Miniaturas clicáveis abaixo da foto grande */
+.produto-galeria-thumb {
+    height: 80px;
+    background: #f8f9fa;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.produto-galeria-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.produto-galeria-thumb.ativo {
+    border-color: #ff6a00;
+}
+
+.produto-galeria-thumb:hover {
+    border-color: #ff8500;
+}
+
+/* Enquanto a foto real nao é adicionada (src="#"), mostra uma
+   caixa cinza no lugar do ícone de imagem quebrada do navegador */
+.produto-galeria-principal img[src="#"],
+.produto-galeria-thumb img[src="#"] {
+    min-height: 60px;
+    width: 100%;
+    background: #e9ecef;
+}
+
+/* Estrelas de avaliação do produto */
+.produto-avaliacao i {
+    color: #ff6a00;
+}
+
+/* Caixas de garantia e entrega */
+.produto-info-caixa {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.produto-info-caixa i {
+    font-size: 1.4rem;
+    color: #ff6a00;
+}
+
+/* Abas de Descrição / Especificações Técnicas */
+.nav-tabs .nav-link {
+    color: #333;
+    font-weight: 600;
+}
+
+.nav-tabs .nav-link.active {
+    color: #ff6a00;
+    border-color: #dee2e6 #dee2e6 #fff;
+}

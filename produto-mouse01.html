@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>
+            Mouse Gamer Attack Shark X6 - Nexora
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+        <link href="style.css" rel="stylesheet"/>
+    </head>
+    <body class="bg-light">
+        <!-- navbar: identica a do index.html, para manter a navegacao em todas as paginas -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center fw-bold fs-4" href="index.html">
+                    <img alt="Logo Nexora" src="img/logo.png" style="height:45px; width:auto; margin-right:10px;"/>
+                    <span>
+                        NEXORA
+                    </span>
+                </a>
+                <button class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <form class="d-flex mx-auto w-50">
+                        <input class="form-control" placeholder="Pesquisar produtos..." type="search"/>
+                    </form>
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item me-2" id="nav-login-item">
+                            <a class="nav-link" href="login.html">
+                                Login
+                            </a>
+                        </li>
+                        <li class="nav-item me-3" id="nav-cadastro-item">
+                            <a class="nav-link" href="cadastro.html">
+                                Cadastro
+                            </a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link" href="cadastro-produto.html">
+                                Cadastrar Produto
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 d-none" id="nav-usuario-item">
+                            <span class="nav-link text-white">
+                                <i class="bi bi-person-check me-1">
+                                </i>
+                                <span id="nome-usuario-logado">
+                                </span>
+                            </span>
+                        </li>
+                        <li class="nav-item me-3 d-none" id="nav-sair-item">
+                            <button class="btn btn-outline-light btn-sm fw-bold" id="botao-sair" type="button">
+                                Sair
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-warning fw-bold position-relative" data-bs-target="#carrinho" data-bs-toggle="offcanvas">
+                                <i class="bi bi-cart3 me-1">
+                                </i>
+                                Carrinho
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    2
+                                </span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- trilha de navegacao (breadcrumb): mostra o caminho ate o produto atual -->
+        <div class="container mt-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                        <a class="text-decoration-none" href="index.html">
+                            Loja
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="text-decoration-none" href="index.html#produtos-destaque">
+                            Mouses
+                        </a>
+                    </li>
+                    <li aria-current="page" class="breadcrumb-item active">
+                        Mouse Gamer Attack Shark X6
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <main class="container mb-5 mt-3">
+            <div class="row g-5">
+                <!-- ===================== GALERIA DE IMAGENS ===================== -->
+                <section class="col-lg-6">
+                    <!--
+                                A galeria funciona assim: a imagem grande (id="galeria-principal") mostra a
+                                foto selecionada, e cada miniatura abaixo chama trocarImagemGaleria(this)
+                                ao ser clicada, trocando a foto grande pela foto da miniatura clicada.
+                                Todas as imagens usam src="#" (placeholder) porque as fotos reais deste
+                                produto ainda serao adicionadas por voce - e so substituir o "#" pelo
+                                caminho do arquivo (ex: img/perifericos/nome-da-foto.png).
+-->
+                    <div class="produto-galeria-principal mb-3">
+                        <img alt="Foto principal - Mouse Gamer Attack Shark X6" id="galeria-principal" src="img/perifericos/mouse01.png"/>
+                    </div>
+                    <div class="row row-cols-4 g-2">
+                        <div class="col">
+                            <div class="produto-galeria-thumb ativo" onclick="trocarImagemGaleria(this)">
+                                <img alt="Foto 1 - Mouse Gamer Attack Shark X6" src="img/perifericos/mouse01.png"/>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="produto-galeria-thumb" onclick="trocarImagemGaleria(this)">
+                                <img alt="Foto 2 - Mouse Gamer Attack Shark X6" src="#"/>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="produto-galeria-thumb" onclick="trocarImagemGaleria(this)">
+                                <img alt="Foto 3 - Mouse Gamer Attack Shark X6" src="#"/>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="produto-galeria-thumb" onclick="trocarImagemGaleria(this)">
+                                <img alt="Foto 4 - Mouse Gamer Attack Shark X6" src="#"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ===================== INFORMACOES E COMPRA ===================== -->
+                <section class="col-lg-6">
+                    <span class="badge text-bg-dark mb-2">
+                        Mouses
+                    </span>
+                    <h1 class="fw-bold fs-3">
+                        Mouse Gamer sem Fio Attack Shark X6 com Base de Carregamento Magnético RGB, 26.000 DPI
+                    </h1>
+                    <!-- avaliacao fixa, apenas ilustrativa (nao ha sistema de avaliacoes real ainda) -->
+                    <div class="produto-avaliacao mb-3">
+                        <i class="bi bi-star-fill">
+                        </i>
+                        <i class="bi bi-star-fill">
+                        </i>
+                        <i class="bi bi-star-fill">
+                        </i>
+                        <i class="bi bi-star-fill">
+                        </i>
+                        <i class="bi bi-star-half">
+                        </i>
+                        <span class="text-muted ms-1">
+                            4.7 (127 avaliações)
+                        </span>
+                    </div>
+                    <div class="preco-box mb-3">
+                        <del class="text-muted">
+                            R$ 444,43
+                        </del>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="fw-bold fs-2">
+                                R$ 229,99
+                            </span>
+                            <span class="badge bg-danger fs-6">
+                                -48%
+                            </span>
+                        </div>
+                        <small class="text-muted">
+                            10x de R$ 12,99 sem juros
+                        </small>
+                    </div>
+                    <!-- seletor de quantidade, controlado pelo script no fim da pagina -->
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <span class="fw-bold">
+                            Quantidade:
+                        </span>
+                        <div class="quantidade-box">
+                            <button class="btn btn-sm btn-light" id="btn-menos" type="button">
+                                -
+                            </button>
+                            <span id="quantidade-valor">
+                                1
+                            </span>
+                            <button class="btn btn-sm btn-light" id="btn-mais" type="button">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 mb-4">
+                        <button class="btn btn-warning btn-lg fw-bold comprar">
+                            Comprar Agora
+                        </button>
+                        <button class="btn btn-outline-dark btn-lg fw-bold adicionar-carrinho" data-nome="Mouse Gamer Attack Shark X6" data-preco="229.99">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                    <!-- area de garantia -->
+                    <div class="produto-info-caixa mb-3">
+                        <i class="bi bi-shield-check">
+                        </i>
+                        <div>
+                            <strong>
+                                Garantia de 12 meses
+                            </strong>
+                            <p class="text-muted mb-0 small">
+                                Garantia direta com o fabricante contra defeitos de fabricação.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- area de entrega, com calculo de frete simulado (sem back-end) -->
+                </section>
+            </div>
+            <!-- ===================== DESCRICAO / ESPECIFICACOES ===================== -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <ul class="nav nav-tabs" id="produtoTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button aria-selected="true" class="nav-link active" data-bs-target="#tab-descricao" data-bs-toggle="tab" id="tab-descricao-btn" role="tab" type="button">
+                                Descrição
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button aria-selected="false" class="nav-link" data-bs-target="#tab-especificacoes" data-bs-toggle="tab" id="tab-especificacoes-btn" role="tab" type="button">
+                                Especificações Técnicas
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content border border-top-0 rounded-bottom p-4 bg-white">
+                        <div class="tab-pane fade show active" id="tab-descricao" role="tabpanel">
+                            <p class="mb-0">
+                                O Mouse Gamer Attack Shark X6 foi criado para quem exige precisão e agilidade em cada partida. Com sensor óptico de alta performance e até 26.000 DPI, ele garante rastreamento preciso mesmo em movimentos rápidos. A base de carregamento magnético elimina a necessidade de cabos, mantendo o mouse sempre pronto para uso, enquanto a iluminação RGB personalizável completa o visual do seu setup.
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="tab-especificacoes" role="tabpanel">
+                            <table class="table table-striped mb-0">
+                                <tbody>
+                                    <tr>
+                                        <th class="w-25" scope="row">
+                                            Conectividade
+                                        </th>
+                                        <td>
+                                            Sem fio 2.4GHz / Bluetooth / Cabo USB-C
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="w-25" scope="row">
+                                            Sensor
+                                        </th>
+                                        <td>
+                                            Óptico, até 26.000 DPI
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="w-25" scope="row">
+                                            Botões
+                                        </th>
+                                        <td>
+                                            6 botões programáveis
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="w-25" scope="row">
+                                            Iluminação
+                                        </th>
+                                        <td>
+                                            RGB customizável
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="w-25" scope="row">
+                                            Bateria
+                                        </th>
+                                        <td>
+                                            Até 70 horas de uso (sem RGB ligado)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="w-25" scope="row">
+                                            Peso
+                                        </th>
+                                        <td>
+                                            Aproximadamente 65g
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="w-25" scope="row">
+                                            Compatibilidade
+                                        </th>
+                                        <td>
+                                            Windows, macOS e Linux
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- carrinho: identico ao offcanvas do index.html, para manter a mesma experiencia -->
+        <div class="offcanvas offcanvas-end carrinho-offcanvas" id="carrinho" tabindex="-1">
+            <div class="offcanvas-header border-bottom">
+                <div>
+                    <h5 class="fw-bold mb-0">
+                        Carrinho
+                    </h5>
+                    <small class="text-muted">
+                        2 produtos adicionados
+                    </small>
+                </div>
+                <button class="btn-close" data-bs-dismiss="offcanvas" type="button">
+                </button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column">
+                <div class="overflow-auto carrinho-lista" id="lista-carrinho">
+                    <div class="carrinho-item">
+                        <div class="carrinho-img">
+                            <img alt="Mouse Gamer" src="img/perifericos/mouse01.png"/>
+                        </div>
+                        <div class="carrinho-info">
+                            <h6 class="fw-bold mb-1">
+                                Mouse Gamer Attack Shark X6
+                            </h6>
+                            <small class="text-muted d-block mb-2">
+                                Sem fio, RGB, 26.000 DPI
+                            </small>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="quantidade-box">
+                                    <button class="btn btn-sm btn-light" type="button">
+                                        -
+                                    </button>
+                                    <span>
+                                        1
+                                    </span>
+                                    <button class="btn btn-sm btn-light" type="button">
+                                        +
+                                    </button>
+                                </div>
+                                <strong>
+                                    R$ 229,99
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carrinho-item">
+                        <div class="carrinho-img">
+                            <img alt="Teclado Gamer" src="img/perifericos/teclado01.png"/>
+                        </div>
+                        <div class="carrinho-info">
+                            <h6 class="fw-bold mb-1">
+                                Teclado Mecânico Attack Shark M86
+                            </h6>
+                            <small class="text-muted d-block mb-2">
+                                RGB, Bluetooth, USB-C
+                            </small>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="quantidade-box">
+                                    <button class="btn btn-sm btn-light" type="button">
+                                        -
+                                    </button>
+                                    <span>
+                                        1
+                                    </span>
+                                    <button class="btn btn-sm btn-light" type="button">
+                                        +
+                                    </button>
+                                </div>
+                                <strong>
+                                    R$ 169,99
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carrinho-resumo mt-auto">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">
+                            Subtotal
+                        </span>
+                        <strong>
+                            R$ 399,98
+                        </strong>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-muted">
+                            Frete
+                        </span>
+                        <strong class="text-success">
+                            Grátis
+                        </strong>
+                    </div>
+                    <hr/>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="fw-bold">
+                            Total
+                        </span>
+                        <span class="fs-5 fw-bold" id="total-carrinho">
+                            R$ 399,98
+                        </span>
+                    </div>
+                    <button class="btn btn-success fw-bold w-100 mb-2">
+                        <i class="bi bi-credit-card me-1">
+                        </i>
+                        Finalizar compra
+                    </button>
+                    <button class="btn btn-outline-dark fw-bold w-100" data-bs-dismiss="offcanvas">
+                        Continuar comprando
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- footer: identico ao do index.html -->
+        <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img alt="Nexora" class="me-3" src="img/logo.png" width="55"/>
+                            <h2 class="fw-bold mb-0">
+                                NEXORA
+                            </h2>
+                        </div>
+                        <p class="text-secondary">
+                            Equipamentos e periféricos gamers de alta performance
+para elevar seu nível no jogo.
+                        </p>
+                        <div class="fs-3">
+                            <i class="bi bi-instagram me-3">
+                            </i>
+                            <i class="bi bi-youtube me-3">
+                            </i>
+                            <i class="bi bi-discord me-3">
+                            </i>
+                            <i class="bi bi-facebook">
+                            </i>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h5 class="fw-bold mb-3">
+                            Institucional
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a class="footer-link" href="#">
+                                    Sobre nós
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="#">
+                                    Política de Privacidade
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="#">
+                                    Termos de Uso
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#">
+                                    Trocas e Devoluções
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h5 class="fw-bold mb-3">
+                            Atendimento
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a class="footer-link" href="#">
+                                    Central de Ajuda
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="#">
+                                    Meus Pedidos
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="footer-link" href="#">
+                                    Rastrear Pedido
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-link" href="#">
+                                    Contato
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 mb-4">
+                        <h5 class="fw-bold mb-3">
+                            Contato
+                        </h5>
+                        <p>
+                            contato@nexora.com.br
+                        </p>
+                        <p>
+                            (49) 99999-9999
+                        </p>
+                        <p>
+                            Seg. a Sex. das 09h às 18h
+                        </p>
+                    </div>
+                    <div class="col-lg-2 mb-4">
+                        <h5 class="fw-bold mb-3">
+                            Pagamentos
+                        </h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-light text-dark p-2">
+                                PIX
+                            </span>
+                            <span class="badge bg-light text-dark p-2">
+                                VISA
+                            </span>
+                            <span class="badge bg-light text-dark p-2">
+                                MASTER
+                            </span>
+                            <span class="badge bg-light text-dark p-2">
+                                ELO
+                            </span>
+                            <span class="badge bg-light text-dark p-2">
+                                BOLETO
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-secondary"/>
+                <p class="text-center text-secondary mb-0">
+                    © 2026 Nexora - Cristian e Samuel.
+                </p>
+            </div>
+        </footer>
+        <script>
+            // mesma logica de login/logout usada em todas as paginas do site
+const usuarioLogado = JSON.parse(localStorage.getItem("nexoraUsuarioLogado")) || JSON.parse(sessionStorage.getItem("nexoraUsuarioLogado"));
+
+if (usuarioLogado) {
+                                                                document.getElementById("nav-login-item").classList.add("d-none");
+                                                                document.getElementById("nav-cadastro-item").classList.add("d-none");
+                                                                document.getElementById("nav-usuario-item").classList.remove("d-none");
+                                                                document.getElementById("nav-sair-item").classList.remove("d-none");
+                                                                document.getElementById("nome-usuario-logado").textContent = usuarioLogado.nome.split(" ")[0];
+}
+
+document.getElementById("botao-sair").addEventListener("click", () => {
+                                                                localStorage.removeItem("nexoraUsuarioLogado");
+                                                                sessionStorage.removeItem("nexoraUsuarioLogado");
+                                                                window.location.reload();
+});
+
+// ---------------------------------------------------------------
+// Galeria de fotos: troca a imagem grande pela miniatura clicada.
+// Usamos getAttribute("src") em vez de miniatura.src porque o
+// navegador "resolve" o valor "#" para uma URL completa - pegando
+// o atributo puro, a troca funciona corretamente quando voce
+// substituir os placeholders pelas fotos reais do produto.
+// ---------------------------------------------------------------
+function trocarImagemGaleria(miniatura) {
+                                                                const imagemPrincipal = document.getElementById("galeria-principal");
+                                                                const novaImagem = miniatura.querySelector("img").getAttribute("src");
+
+                                                                imagemPrincipal.setAttribute("src", novaImagem);
+
+                                                                document.querySelectorAll(".produto-galeria-thumb").forEach((item) => {
+                                                                                                                                item.classList.remove("ativo");
+                                                                });
+                                                                miniatura.classList.add("ativo");
+}
+
+// ---------------------------------------------------------------
+// Seletor de quantidade (+/-), nunca deixa ir abaixo de 1 unidade
+// ---------------------------------------------------------------
+let quantidadeAtual = 1;
+const quantidadeValor = document.getElementById("quantidade-valor");
+
+document.getElementById("btn-mais").addEventListener("click", () => {
+                                                                quantidadeAtual++;
+                                                                quantidadeValor.textContent = quantidadeAtual;
+});
+
+document.getElementById("btn-menos").addEventListener("click", () => {
+                                                                if (quantidadeAtual > 1) {
+                                                                                                                                quantidadeAtual--;
+                                                                                                                                quantidadeValor.textContent = quantidadeAtual;
+                                                                }
+});        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+        </script>
+    </body>
+</html>

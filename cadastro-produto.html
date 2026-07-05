@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <title>
+            Cadastro de Produto - Nexora
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+        <link href="style.css" rel="stylesheet"/>
+    </head>
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center fw-bold fs-4" href="index.html">
+                    <img alt="Logo Nexora" src="img/logo.png" style="height:45px; width:auto; margin-right:10px;"/>
+                    <span>
+                        NEXORA
+                    </span>
+                </a>
+                <button class="navbar-toggler" data-bs-target="#menu-produto" data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-produto">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item me-2">
+                            <a class="nav-link" href="index.html">
+                                Loja
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light" href="index.html">
+                                <i class="bi bi-arrow-left me-1">
+                                </i>
+                                Voltar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="container py-5">
+            <div class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+                <div>
+                    <h1 class="fw-bold mb-1">
+                        Cadastrar produto
+                    </h1>
+                    <p class="text-muted mb-0">
+                        Preencha os dados do produto.
+                    </p>
+                </div>
+                <span class="badge text-bg-dark align-self-start p-2">
+                    <i class="bi bi-box-seam me-1">
+                    </i>
+                    Novo produto
+                </span>
+            </div>
+            <div class="alert alert-success d-none" id="produto-alerta" role="alert">
+                Produto preenchido com sucesso.
+            </div>
+            <div class="row g-4">
+                <section class="col-lg-7">
+                    <form class="card produto-form-card border-0 shadow-sm" id="form-produto">
+                        <div class="card-body p-4">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label" for="produto-titulo">
+                                        Titulo do produto
+                                    </label>
+                                    <input class="form-control" id="produto-titulo" placeholder="Ex: Mouse Gamer RGB" required="" type="text"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="produto-categoria">
+                                        Categoria
+                                    </label>
+                                    <select class="form-select" id="produto-categoria" required="">
+                                        <option value="">
+                                            Selecione
+                                        </option>
+                                        <option>
+                                            Mouses
+                                        </option>
+                                        <option>
+                                            Teclados
+                                        </option>
+                                        <option>
+                                            Headsets
+                                        </option>
+                                        <option>
+                                            Monitores
+                                        </option>
+                                        <option>
+                                            Hardware
+                                        </option>
+                                        <option>
+                                            Consoles
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="produto-estoque">
+                                        Estoque
+                                    </label>
+                                    <input class="form-control" id="produto-estoque" min="0" placeholder="Ex: 15" required="" type="number"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="produto-preco-antigo">
+                                        Preco sem promocao
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            R$
+                                        </span>
+                                        <input class="form-control" id="produto-preco-antigo" min="0" placeholder="499.90" required="" step="0.01" type="number"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="produto-preco-atual">
+                                        Preco promocional
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            R$
+                                        </span>
+                                        <input class="form-control" id="produto-preco-atual" min="0" placeholder="349.90" required="" step="0.01" type="number"/>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="produto-descricao">
+                                        Descricao
+                                    </label>
+                                    <textarea class="form-control" id="produto-descricao" placeholder="Digite algumas informacoes sobre o produto..." required="" rows="4"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="produto-foto">
+                                        Foto do produto
+                                    </label>
+                                    <input accept="image/*" class="form-control" id="produto-foto" type="file"/>
+                                    <small class="text-muted">
+                                        A imagem aparece somente na pre-visualizacao.
+                                    </small>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check produto-check">
+                                        <input class="form-check-input" id="produto-destaque" type="checkbox"/>
+                                        <label class="form-check-label" for="produto-destaque">
+                                            Mostrar em destaque
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check produto-check">
+                                        <input checked="" class="form-check-input" id="produto-promocao" type="checkbox"/>
+                                        <label class="form-check-label" for="produto-promocao">
+                                            Produto em promocao
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
+                                <button class="btn btn-warning fw-bold" type="submit">
+                                    <i class="bi bi-check-circle me-1">
+                                    </i>
+                                    Cadastrar produto
+                                </button>
+                                <button class="btn btn-outline-dark fw-bold" id="limpar-produto" type="reset">
+                                    Limpar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                <aside class="col-lg-5">
+                    <div class="card produto-preview-card border-0 shadow-sm">
+                        <div class="card-header bg-white">
+                            <h5 class="fw-bold mb-0">
+                                Previa do produto
+                            </h5>
+                        </div>
+                        <div class="produto-preview-img">
+                            <img alt="Previa do produto" id="preview-imagem" src="img/perifericos/mouse01.png"/>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between gap-2 mb-2">
+                                <span class="badge bg-dark" id="preview-categoria">
+                                    Categoria
+                                </span>
+                                <span class="badge bg-success" id="preview-desconto">
+                                    -0%
+                                </span>
+                            </div>
+                            <h4 class="fw-bold" id="preview-titulo">
+                                Nome do produto
+                            </h4>
+                            <p class="text-muted" id="preview-descricao">
+                                A descricao aparece aqui enquanto voce preenche o formulario.
+                            </p>
+                            <del class="text-muted small" id="preview-preco-antigo">
+                                R$ 0,00
+                            </del>
+                            <div class="fs-4 fw-bold text-dark" id="preview-preco-atual">
+                                R$ 0,00
+                            </div>
+                            <div class="d-flex justify-content-between mt-3 pt-3 border-top">
+                                <span class="text-muted">
+                                    Estoque
+                                </span>
+                                <strong id="preview-estoque">
+                                    0 unidades
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+        <script>
+            const formProduto = document.getElementById("form-produto");
+                                const alertaProduto = document.getElementById("produto-alerta");
+                                const camposProduto = {
+                                                titulo: document.getElementById("produto-titulo"),
+                                                categoria: document.getElementById("produto-categoria"),
+                                                estoque: document.getElementById("produto-estoque"),
+                                                precoAntigo: document.getElementById("produto-preco-antigo"),
+                                                precoAtual: document.getElementById("produto-preco-atual"),
+                                                descricao: document.getElementById("produto-descricao"),
+                                                foto: document.getElementById("produto-foto")
+                                };
+
+                                const previewProduto = {
+                                                titulo: document.getElementById("preview-titulo"),
+                                                categoria: document.getElementById("preview-categoria"),
+                                                estoque: document.getElementById("preview-estoque"),
+                                                precoAntigo: document.getElementById("preview-preco-antigo"),
+                                                precoAtual: document.getElementById("preview-preco-atual"),
+                                                descricao: document.getElementById("preview-descricao"),
+                                                desconto: document.getElementById("preview-desconto"),
+                                                imagem: document.getElementById("preview-imagem")
+                                };
+
+                                function formatarPreco(valor) {
+                                                return Number(valor || 0).toLocaleString("pt-BR", {
+                                                                style: "currency",
+                                                                currency: "BRL"
+                                                });
+                                }
+
+                                function calcularDesconto(precoAntigo, precoAtual) {
+                                                if (!precoAntigo || !precoAtual || precoAntigo <= precoAtual) {
+                                                                return 0;
+                                                }
+
+                                                return Math.round(((precoAntigo - precoAtual) / precoAntigo) * 100);
+                                }
+
+                                function atualizarPreview() {
+                                                const precoAntigo = Number(camposProduto.precoAntigo.value);
+                                                const precoAtual = Number(camposProduto.precoAtual.value);
+                                                const desconto = calcularDesconto(precoAntigo, precoAtual);
+                                                const estoque = camposProduto.estoque.value || 0;
+
+                                                previewProduto.titulo.textContent = camposProduto.titulo.value || "Nome do produto";
+                                                previewProduto.categoria.textContent = camposProduto.categoria.value || "Categoria";
+                                                previewProduto.descricao.textContent = camposProduto.descricao.value || "A descricao aparece aqui enquanto voce preenche o formulario.";
+                                                previewProduto.precoAntigo.textContent = formatarPreco(precoAntigo);
+                                                previewProduto.precoAtual.textContent = formatarPreco(precoAtual);
+                                                previewProduto.desconto.textContent = "-" + desconto + "%";
+                                                previewProduto.estoque.textContent = estoque + " unidades";
+                                }
+
+                                Object.values(camposProduto).forEach((campo) => {
+                                                campo.addEventListener("input", atualizarPreview);
+                                                campo.addEventListener("change", atualizarPreview);
+                                });
+
+                                camposProduto.foto.addEventListener("change", () => {
+                                                const arquivo = camposProduto.foto.files[0];
+
+                                                if (!arquivo) {
+                                                                previewProduto.imagem.src = "img/perifericos/mouse01.png";
+                                                                return;
+                                                }
+
+                                                previewProduto.imagem.src = URL.createObjectURL(arquivo);
+                                });
+
+                                formProduto.addEventListener("submit", (evento) => {
+                                                evento.preventDefault();
+                                                atualizarPreview();
+                                                alertaProduto.classList.remove("d-none");
+                                                window.scrollTo({ top: 0, behavior: "smooth" });
+                                });
+
+                                formProduto.addEventListener("reset", () => {
+                                                setTimeout(() => {
+                                                                previewProduto.imagem.src = "img/perifericos/mouse01.png";
+                                                                alertaProduto.classList.add("d-none");
+                                                                atualizarPreview();
+                                                }, 0);
+                                });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+        </script>
+    </body>
+</html>
