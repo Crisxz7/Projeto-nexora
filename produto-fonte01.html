@@ -93,7 +93,7 @@
         </div>
         <main class="container mb-5 mt-3">
             <div class="row g-5">
-                <!-- galeria de imagens -->
+                <!-- galeira de imagens -->
                 <section class="col-lg-6">
                     <div class="produto-galeria-principal mb-3">
                         <img alt="Foto principal - Fonte MSI MAG A650BN" id="galeria-principal" src="img/perifericos/fonte01.png"/>
@@ -129,7 +129,6 @@
                     <h1 class="fw-bold fs-3">
                         Fonte MSI MAG A650BN, 650W, 80 Plus Bronze, PFC Ativo, Com Cabo, Preto
                     </h1>
-                    <!-- avaliacao -->
                     <div class="produto-avaliacao mb-3">
                         <i class="bi bi-star-fill">
                         </i>
@@ -186,7 +185,7 @@
                             Adicionar ao Carrinho
                         </button>
                     </div>
-                    <!-- garantia -->
+                    <!-- area de garantia -->
                     <div class="produto-info-caixa mb-3">
                         <i class="bi bi-shield-check">
                         </i>
@@ -201,7 +200,7 @@
                     </div>
                 </section>
             </div>
-            <!-- descriçao e especificacoes -->
+            <!-- descricao e especificacoes-->
             <div class="row mt-5">
                 <div class="col-12">
                     <ul class="nav nav-tabs" id="produtoTabs" role="tablist">
@@ -404,8 +403,7 @@
                             </h2>
                         </div>
                         <p class="text-secondary">
-                            Equipamentos e periféricos gamers de alta performance
-para elevar seu nível no jogo.
+                            Equipamentos e periféricos gamers de alta performance para elevar seu nível no jogo.
                         </p>
                         <div class="fs-3">
                             <i class="bi bi-instagram me-3">
@@ -516,53 +514,50 @@ para elevar seu nível no jogo.
             </div>
         </footer>
         <script>
-    
-            const usuarioLogado = JSON.parse(localStorage.getItem("nexoraUsuarioLogado")) || JSON.parse(sessionStorage.getItem("nexoraUsuarioLogado"));
+        const usuarioLogado = JSON.parse(localStorage.getItem("nexoraUsuarioLogado")) || JSON.parse(sessionStorage.getItem("nexoraUsuarioLogado"));
 
-                if (usuarioLogado) {
-                    document.getElementById("nav-login-item").classList.add("d-none");
-                    document.getElementById("nav-cadastro-item").classList.add("d-none");
-                    document.getElementById("nav-usuario-item").classList.remove("d-none");
-                    document.getElementById("nav-sair-item").classList.remove("d-none");
-                    document.getElementById("nome-usuario-logado").textContent = usuarioLogado.nome.split(" ")[0];
-                }
+        if (usuarioLogado) {
+            document.getElementById("nav-login-item").classList.add("d-none");
+            document.getElementById("nav-cadastro-item").classList.add("d-none");
+            document.getElementById("nav-usuario-item").classList.remove("d-none");
+            document.getElementById("nav-sair-item").classList.remove("d-none");
+            document.getElementById("nome-usuario-logado").textContent = usuarioLogado.nome.split(" ")[0];
+        }
 
-                    document.getElementById("botao-sair").addEventListener("click", () => {
-                    localStorage.removeItem("nexoraUsuarioLogado");
-                    sessionStorage.removeItem("nexoraUsuarioLogado");
-                    window.location.reload();
-                });
+        document.getElementById("botao-sair").addEventListener("click", () => {
+            localStorage.removeItem("nexoraUsuarioLogado");
+            sessionStorage.removeItem("nexoraUsuarioLogado");
+            window.location.reload();
+        });
 
-            function trocarImagemGaleria(miniatura) {
-                const imagemPrincipal = document.getElementById("galeria-principal");
-                const novaImagem = miniatura.querySelector("img").getAttribute("src");
+        function trocarImagemGaleria(miniatura) {
+            const imagemPrincipal = document.getElementById("galeria-principal");
+            const novaImagem = miniatura.querySelector("img").getAttribute("src");
 
-                    imagemPrincipal.setAttribute("src", novaImagem);
+            imagemPrincipal.setAttribute("src", novaImagem);
 
-                    document.querySelectorAll(".produto-galeria-thumb").forEach((item) => {
-                    item.classList.remove("ativo");
-                });
-                miniatura.classList.add("ativo");
-            }
-
-
-    // seletor de quantidade (+/-), nunca deixa ir abaixo de 1 unidade
-
-            let quantidadeAtual = 1;
-            const quantidadeValor = document.getElementById("quantidade-valor");
-
-                document.getElementById("btn-mais").addEventListener("click", () => {
-                quantidadeAtual++;
-                quantidadeValor.textContent = quantidadeAtual;
+            document.querySelectorAll(".produto-galeria-thumb").forEach((item) => {
+                item.classList.remove("ativo");
             });
+            miniatura.classList.add("ativo");
+        }
 
-            document.getElementById("btn-menos").addEventListener("click", () => {
-                if (quantidadeAtual > 1) {
-                    quantidadeAtual--;
-                    quantidadeValor.textContent = quantidadeAtual;
-                                                                }
-            });    
-            </script>
+        // Seletor de quantidade (+/-), nunca deixa ir abaixo de 1 unidade
+        let quantidadeAtual = 1;
+        const quantidadeValor = document.getElementById("quantidade-valor");
+
+        document.getElementById("btn-mais").addEventListener("click", () => {
+            quantidadeAtual++;
+            quantidadeValor.textContent = quantidadeAtual;
+        });
+
+        document.getElementById("btn-menos").addEventListener("click", () => {
+            if (quantidadeAtual > 1) {
+                quantidadeAtual--;
+                quantidadeValor.textContent = quantidadeAtual;
+            }
+        });
+        </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
         </script>

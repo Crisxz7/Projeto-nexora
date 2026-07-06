@@ -274,9 +274,7 @@ footer .badge{
     display: block;
 }
 
-/* =========================================================
-   Página individual do produto (produto-*.html)
-   ========================================================= */
+
 
 /* Foto grande da galeria */
 .produto-galeria-principal {
@@ -323,14 +321,6 @@ footer .badge{
     border-color: #ff8500;
 }
 
-/* Enquanto a foto real nao é adicionada (src="#"), mostra uma
-   caixa cinza no lugar do ícone de imagem quebrada do navegador */
-.produto-galeria-principal img[src="#"],
-.produto-galeria-thumb img[src="#"] {
-    min-height: 60px;
-    width: 100%;
-    background: #e9ecef;
-}
 
 /* Estrelas de avaliação do produto */
 .produto-avaliacao i {
