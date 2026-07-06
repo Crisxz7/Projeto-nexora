@@ -11,7 +11,6 @@
         <link href="style.css" rel="stylesheet"/>
     </head>
     <body class="bg-light">
-        <!-- navbar: identica a do index.html, para manter a navegacao em todas as paginas -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center fw-bold fs-4" href="index.html">
@@ -71,7 +70,7 @@
                 </div>
             </div>
         </nav>
-        <!-- trilha de navegacao (breadcrumb): mostra o caminho ate o produto atual -->
+        <!-- mostra o caminho ate o produto atual -->
         <div class="container mt-4">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0">
@@ -93,16 +92,8 @@
         </div>
         <main class="container mb-5 mt-3">
             <div class="row g-5">
-                <!-- ===================== GALERIA DE IMAGENS ===================== -->
+                <!-- galeria de imagens -->
                 <section class="col-lg-6">
-                    <!--
-                                A galeria funciona assim: a imagem grande (id="galeria-principal") mostra a
-                                foto selecionada, e cada miniatura abaixo chama trocarImagemGaleria(this)
-                                ao ser clicada, trocando a foto grande pela foto da miniatura clicada.
-                                Todas as imagens usam src="#" (placeholder) porque as fotos reais deste
-                                produto ainda serao adicionadas por voce - e so substituir o "#" pelo
-                                caminho do arquivo (ex: img/perifericos/nome-da-foto.png).
--->
                     <div class="produto-galeria-principal mb-3">
                         <img alt="Foto principal - Gabinete K-mex Aquário" id="galeria-principal" src="img/perifericos/gabinete01.png"/>
                     </div>
@@ -129,7 +120,7 @@
                         </div>
                     </div>
                 </section>
-                <!-- ===================== INFORMACOES E COMPRA ===================== -->
+                <!-- informaççoes e compra  -->
                 <section class="col-lg-6">
                     <span class="badge text-bg-dark mb-2">
                         Hardware
@@ -137,7 +128,7 @@
                     <h1 class="fw-bold fs-3">
                         Gabinete Gamer Aquário K-mex Cg-w1kv, Frontal E Lateral Em Vidro Temperado, Micro Atx, Branco
                     </h1>
-                    <!-- avaliacao fixa, apenas ilustrativa (nao ha sistema de avaliacoes real ainda) -->
+                    <!-- avaliacao -->
                     <div class="produto-avaliacao mb-3">
                         <i class="bi bi-star-fill">
                         </i>
@@ -169,7 +160,7 @@
                             10x de R$ 24,99 sem juros
                         </small>
                     </div>
-                    <!-- seletor de quantidade, controlado pelo script no fim da pagina -->
+                    <!-- seletor de quantidade, controlado pelo js no fim da pagina -->
                     <div class="d-flex align-items-center gap-3 mb-3">
                         <span class="fw-bold">
                             Quantidade:
@@ -194,7 +185,7 @@
                             Adicionar ao Carrinho
                         </button>
                     </div>
-                    <!-- area de garantia -->
+                    <!-- garantia -->
                     <div class="produto-info-caixa mb-3">
                         <i class="bi bi-shield-check">
                         </i>
@@ -207,10 +198,9 @@
                             </p>
                         </div>
                     </div>
-                    <!-- area de entrega, com calculo de frete simulado (sem back-end) -->
                 </section>
             </div>
-            <!-- ===================== DESCRICAO / ESPECIFICACOES ===================== -->
+            <!-- descriçao e especificaçoes -->
             <div class="row mt-5">
                 <div class="col-12">
                     <ul class="nav nav-tabs" id="produtoTabs" role="tablist">
@@ -281,7 +271,7 @@
                 </div>
             </div>
         </main>
-        <!-- carrinho: identico ao offcanvas do index.html, para manter a mesma experiencia -->
+        <!-- carrinho -->
         <div class="offcanvas offcanvas-end carrinho-offcanvas" id="carrinho" tabindex="-1">
             <div class="offcanvas-header border-bottom">
                 <div>
@@ -393,7 +383,7 @@
                 </div>
             </div>
         </div>
-        <!-- footer: identico ao do index.html -->
+        <!-- footer -->
         <footer class="bg-dark text-white pt-5 pb-3 mt-5">
             <div class="container">
                 <div class="row">
@@ -405,8 +395,7 @@
                             </h2>
                         </div>
                         <p class="text-secondary">
-                            Equipamentos e periféricos gamers de alta performance
-para elevar seu nível no jogo.
+                            Equipamentos e periféricos gamers de alta performance para elevar seu nível no jogo.
                         </p>
                         <div class="fs-3">
                             <i class="bi bi-instagram me-3">
@@ -517,59 +506,51 @@ para elevar seu nível no jogo.
             </div>
         </footer>
         <script>
-            // mesma logica de login/logout usada em todas as paginas do site
-const usuarioLogado = JSON.parse(localStorage.getItem("nexoraUsuarioLogado")) || JSON.parse(sessionStorage.getItem("nexoraUsuarioLogado"));
+            const usuarioLogado = JSON.parse(localStorage.getItem("nexoraUsuarioLogado")) || JSON.parse(sessionStorage.getItem("nexoraUsuarioLogado"));
 
-if (usuarioLogado) {
-                                                                document.getElementById("nav-login-item").classList.add("d-none");
-                                                                document.getElementById("nav-cadastro-item").classList.add("d-none");
-                                                                document.getElementById("nav-usuario-item").classList.remove("d-none");
-                                                                document.getElementById("nav-sair-item").classList.remove("d-none");
-                                                                document.getElementById("nome-usuario-logado").textContent = usuarioLogado.nome.split(" ")[0];
-}
+                if (usuarioLogado) {
+                    document.getElementById("nav-login-item").classList.add("d-none");
+                    document.getElementById("nav-cadastro-item").classList.add("d-none");
+                    document.getElementById("nav-usuario-item").classList.remove("d-none");
+                    document.getElementById("nav-sair-item").classList.remove("d-none");
+                    document.getElementById("nome-usuario-logado").textContent = usuarioLogado.nome.split(" ")[0];
+                }
 
-document.getElementById("botao-sair").addEventListener("click", () => {
-                                                                localStorage.removeItem("nexoraUsuarioLogado");
-                                                                sessionStorage.removeItem("nexoraUsuarioLogado");
-                                                                window.location.reload();
-});
+                    document.getElementById("botao-sair").addEventListener("click", () => {
+                    localStorage.removeItem("nexoraUsuarioLogado");
+                    sessionStorage.removeItem("nexoraUsuarioLogado");
+                    window.location.reload();
+                });
 
-// ---------------------------------------------------------------
-// Galeria de fotos: troca a imagem grande pela miniatura clicada.
-// Usamos getAttribute("src") em vez de miniatura.src porque o
-// navegador "resolve" o valor "#" para uma URL completa - pegando
-// o atributo puro, a troca funciona corretamente quando voce
-// substituir os placeholders pelas fotos reais do produto.
-// ---------------------------------------------------------------
-function trocarImagemGaleria(miniatura) {
-                                                                const imagemPrincipal = document.getElementById("galeria-principal");
-                                                                const novaImagem = miniatura.querySelector("img").getAttribute("src");
+                function trocarImagemGaleria(miniatura) {
+                    const imagemPrincipal = document.getElementById("galeria-principal");
+                    const novaImagem = miniatura.querySelector("img").getAttribute("src");
 
-                                                                imagemPrincipal.setAttribute("src", novaImagem);
+                    imagemPrincipal.setAttribute("src", novaImagem);
 
-                                                                document.querySelectorAll(".produto-galeria-thumb").forEach((item) => {
+                    document.querySelectorAll(".produto-galeria-thumb").forEach((item) => {
                                                                                                                                 item.classList.remove("ativo");
-                                                                });
-                                                                miniatura.classList.add("ativo");
-}
+                    });
+                    miniatura.classList.add("ativo");
+                }
 
-// ---------------------------------------------------------------
+
 // Seletor de quantidade (+/-), nunca deixa ir abaixo de 1 unidade
-// ---------------------------------------------------------------
-let quantidadeAtual = 1;
-const quantidadeValor = document.getElementById("quantidade-valor");
+                let quantidadeAtual = 1;
+                const quantidadeValor = document.getElementById("quantidade-valor");
 
-document.getElementById("btn-mais").addEventListener("click", () => {
-                                                                quantidadeAtual++;
-                                                                quantidadeValor.textContent = quantidadeAtual;
-});
+                    document.getElementById("btn-mais").addEventListener("click", () => {
+                    quantidadeAtual++;
+                    quantidadeValor.textContent = quantidadeAtual;
+                });
 
-document.getElementById("btn-menos").addEventListener("click", () => {
-                                                                if (quantidadeAtual > 1) {
-                                                                                                                                quantidadeAtual--;
-                                                                                                                                quantidadeValor.textContent = quantidadeAtual;
-                                                                }
-});        </script>
+                document.getElementById("btn-menos").addEventListener("click", () => {
+                    if (quantidadeAtual > 1) {
+                        quantidadeAtual--;
+                        quantidadeValor.textContent = quantidadeAtual;}
+                });     
+            </script>
+            
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
         </script>
     </body>
